@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #333;
+  color: rgb(196, 196, 11);
+  height: 100vh;
+  width: 375px;
+  max-width: 767px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+main p{
+  font-size: 12rem;
+}
+
+footer{
+  height: 30vh;
+  display: flex;
+  align-items: center;
+}
+
+footer button{
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 25px;
+  width: 70vw;
+  height: 40px;
+  color: white;
+  background-color: rgb(146, 146, 76);
+}
+
+footer button a{
+  text-decoration: none;
+  color: #fafafa;
+}
+footer button a::after{
+  text-decoration: none;
+}
