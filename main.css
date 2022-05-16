@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Dancing+Script:wght@400;700&family=Overpass:wght@400;700&family=Roboto:wght@100;300;400;500;900&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -5,45 +6,225 @@
 }
 
 body{
-  background-color: #333;
-  color: rgb(196, 196, 11);
-  height: 100vh;
-  /* width: 375px; */
+  min-height: 480px;
+  height: 640px;
+  max-height: 767px;
   min-width: 320px;
-  max-width: 767px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  width: 100%;
+
+ 
+  background-color: black;
 }
 
-main p{
-  font-size: 12rem;
+main{
+  height: 100%;
   width: 100%;
+  position: relative;
+  background: url(./40.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+
+  z-index: -1;
 }
 
-footer{
+
+
+.header{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  height: 160px;
   width: 100%;
-  height: 30vh;
+  padding: 1em;
+  background-color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 46px;
+  text-align: center;
+  opacity: 0.85;
+  animation-name: slideinHeader;
+  animation-duration: 2s;
 }
 
-footer button{
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 25px;
-  width: 70vw;
-  height: 40px;
+
+
+.header-title{
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 2;
+  height: 160px;
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Dancing Script';
   color: white;
-  background-color: rgb(146, 146, 76);
+  line-height: 3rem;
+  animation: slideinHeader;
+  animation-duration: 2s;
 }
 
-footer button a{
-  text-decoration: none;
-  color: #fafafa;
+
+@keyframes slideinHeader {
+  from{
+    margin-top: -100%;
+    height: 160px;
+  }
+
+  to{
+    margin-top: 0%;
+    height: 160px;
+  }
+
 }
-footer button a::after{
+
+.date{
+  animation: fadeInPlaceAndDate;
+  animation-duration: 1.5s;
+  position: absolute;
+  bottom: 160px;
+  left: 0;
+  height: 140px;
+  width: 50%;
+
+
+  background-color: #333;
+  opacity: 0.75;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Dancing Script';
+  color: white;
+  line-height: 3rem;
+}
+
+.month{
+  font-size: 1.2rem;
+}
+
+.day{
+  font-size: 1.8rem;
+  /* color: rgb(252, 255, 53); */
+  color: #F8EFAE;
+  
+}
+
+.place{
+  animation: fadeInPlaceAndDate;
+  animation-duration: 1.5s;
+  
+  position: absolute;
+  bottom: 160px;
+  right: 0;
+  height: 140px;
+  width: 50%;
+
+  background-color: #333;
+  opacity: 0.75;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Dancing Script';
+  color: white;
+  line-height: 3rem;
+}
+
+.place button{
+  animation: fadeInPlaceButton;
+  animation-duration: 3s;
+  background-color: #F8EFAE;
+  border: none;
+  padding: 1em;
+  border-radius: 15px;
+  color: black;
+  font-weight: bold;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.place a{
   text-decoration: none;
+  color: black;
+}
+
+@keyframes fadeInPlaceAndDate {
+  from{
+  
+    opacity: 0;
+  }
+
+  to{
+    opacity: 0.75;
+  }
+}
+
+@keyframes fadeInPlaceButton {
+    from{
+  
+    opacity: 0;
+  }
+
+  to{
+    opacity: 1;
+  }
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 140px;
+  width: 100%;
+  background-color: black;
+  opacity: 0.75;
+  animation: slideinFooter;
+  animation-duration: 2.5s;
+  font-family: 'Dancing Script';
+  padding: 1em 0;
+  text-align: center;
+}
+
+.farewell .hour{
+color: #F8EFAE;
+  /* color: rgb(252, 255, 53); */
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+}
+
+.farewell .message{
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  color: white;
+}
+
+@keyframes slideinFooter {
+  from{
+    margin-bottom: -100%;
+    height: 0px;
+    opacity: 1;
+  }
+
+  to{
+    height: 140px;
+    opacity: 0.75;
+  }
 }
